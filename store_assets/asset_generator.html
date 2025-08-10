@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrayerfulJournal - Icon Generator</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        .icon-preview {
+            width: 512px;
+            height: 512px;
+            margin: 20px auto;
+            border: 2px solid #ddd;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .icon-content {
+            text-align: center;
+            color: white;
+        }
+        .prayer-hands {
+            font-size: 120px;
+            margin-bottom: 20px;
+            display: block;
+        }
+        .app-name {
+            font-size: 36px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            font-size: 18px;
+            opacity: 0.9;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        .download-btn {
+            background: #6B73FF;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-size: 18px;
+            cursor: pointer;
+            margin: 20px 10px;
+            transition: all 0.3s ease;
+        }
+        .download-btn:hover {
+            background: #5a63e6;
+            transform: translateY(-2px);
+        }
+        .instructions {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .feature-graphic-preview {
+            width: 100%;
+            max-width: 1024px;
+            height: 500px;
+            margin: 20px auto;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 40px;
+            box-sizing: border-box;
+            color: white;
+        }
+        .feature-content {
+            flex: 1;
+            padding-right: 40px;
+        }
+        .feature-title {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .feature-subtitle {
+            font-size: 24px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        .feature-points {
+            list-style: none;
+            padding: 0;
+        }
+        .feature-points li {
+            font-size: 18px;
+            margin-bottom: 10px;
+            padding-left: 30px;
+            position: relative;
+        }
+        .feature-points li:before {
+            content: "✨";
+            position: absolute;
+            left: 0;
+        }
+        .phone-mockup {
+            width: 200px;
+            height: 350px;
+            background: white;
+            border-radius: 30px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        .mockup-screen {
+            background: #6B73FF;
+            width: 100%;
+            height: 250px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 style="text-align: center; color: #333; margin-bottom: 30px;">
+            PrayerfulJournal Store Assets Generator
+        </h1>
+        
+        <div class="instructions">
+            <h3>📱 App Icon (512×512)</h3>
+            <p>Right-click the icon below and "Save image as..." to download your 512×512 app icon for Google Play Store.</p>
+        </div>
+
+        <div class="icon-preview" id="appIcon">
+            <div class="icon-content">
+                <span class="prayer-hands">🙏</span>
+                <div class="app-name">Prayer</div>
+                <div class="subtitle">Journal</div>
+            </div>
+        </div>
+
+        <div style="text-align: center;">
+            <button class="download-btn" onclick="downloadIcon()">Download App Icon (512×512)</button>
+        </div>
+
+        <div class="instructions">
+            <h3>🎨 Feature Graphic (1024×500)</h3>
+            <p>Right-click the graphic below and "Save image as..." to download your feature graphic.</p>
+        </div>
+
+        <div class="feature-graphic-preview" id="featureGraphic">
+            <div class="feature-content">
+                <div class="feature-title">PrayerfulJournal</div>
+                <div class="feature-subtitle">Your Personal Prayer Journey</div>
+                <ul class="feature-points">
+                    <li>Track your prayers daily</li>
+                    <li>Celebrate answered prayers</li>
+                    <li>Grow closer to God</li>
+                    <li>Private & secure</li>
+                </ul>
+            </div>
+            <div class="phone-mockup">
+                <div class="mockup-screen">
+                    <div>
+                        🙏<br>
+                        Prayer<br>
+                        Journal
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center;">
+            <button class="download-btn" onclick="downloadFeatureGraphic()">Download Feature Graphic (1024×500)</button>
+        </div>
+
+        <div class="instructions">
+            <h3>📸 Next Steps for Screenshots</h3>
+            <ol>
+                <li><strong>Run your app</strong> on an Android device or emulator</li>
+                <li><strong>Take screenshots</strong> of key screens:
+                    <ul>
+                        <li>Home/Prayer list screen</li>
+                        <li>Add new prayer screen</li>
+                        <li>Prayer details screen</li>
+                        <li>Answered prayers view</li>
+                        <li>Settings screen</li>
+                    </ul>
+                </li>
+                <li><strong>Use device frames</strong> with tools like:
+                    <ul>
+                        <li>MockUPhone.com (free)</li>
+                        <li>Cleanmock.com (free)</li>
+                        <li>Android Studio Device Art Generator</li>
+                    </ul>
+                </li>
+                <li><strong>Resize to 1080×1920</strong> (9:16 ratio) for best results</li>
+            </ol>
+        </div>
+    </div>
+
+    <script>
+        function downloadIcon() {
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            canvas.width = 512;
+            canvas.height = 512;
+
+            // Create gradient background
+            const gradient = ctx.createLinearGradient(0, 0, 512, 512);
+            gradient.addColorStop(0, '#667eea');
+            gradient.addColorStop(1, '#764ba2');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, 512, 512);
+
+            // Add prayer hands emoji
+            ctx.font = 'bold 120px Arial';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText('🙏', 256, 180);
+
+            // Add app name
+            ctx.fillStyle = 'white';
+            ctx.font = 'bold 48px Arial';
+            ctx.shadowColor = 'rgba(0,0,0,0.3)';
+            ctx.shadowBlur = 4;
+            ctx.shadowOffsetX = 2;
+            ctx.shadowOffsetY = 2;
+            ctx.fillText('Prayer', 256, 300);
+            
+            ctx.font = 'bold 24px Arial';
+            ctx.fillText('Journal', 256, 350);
+
+            // Download
+            const link = document.createElement('a');
+            link.download = 'prayerfuljournal-icon-512x512.png';
+            link.href = canvas.toDataURL();
+            link.click();
+        }
+
+        function downloadFeatureGraphic() {
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            canvas.width = 1024;
+            canvas.height = 500;
+
+            // Create gradient background
+            const gradient = ctx.createLinearGradient(0, 0, 1024, 500);
+            gradient.addColorStop(0, '#667eea');
+            gradient.addColorStop(1, '#764ba2');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, 1024, 500);
+
+            // Add main title
+            ctx.fillStyle = 'white';
+            ctx.font = 'bold 64px Arial';
+            ctx.textAlign = 'left';
+            ctx.shadowColor = 'rgba(0,0,0,0.3)';
+            ctx.shadowBlur = 4;
+            ctx.shadowOffsetX = 2;
+            ctx.shadowOffsetY = 2;
+            ctx.fillText('PrayerfulJournal', 50, 100);
+
+            // Add subtitle
+            ctx.font = 'bold 32px Arial';
+            ctx.fillText('Your Personal Prayer Journey', 50, 150);
+
+            // Add features
+            ctx.font = '24px Arial';
+            ctx.fillText('✨ Track your prayers daily', 50, 220);
+            ctx.fillText('✨ Celebrate answered prayers', 50, 260);
+            ctx.fillText('✨ Grow closer to God', 50, 300);
+            ctx.fillText('✨ Private & secure', 50, 340);
+
+            // Add phone mockup
+            ctx.fillStyle = 'white';
+            ctx.fillRect(750, 75, 200, 350);
+            ctx.fillStyle = '#6B73FF';
+            ctx.fillRect(770, 95, 160, 250);
+            
+            ctx.fillStyle = 'white';
+            ctx.font = 'bold 32px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText('🙏', 850, 180);
+            ctx.font = 'bold 20px Arial';
+            ctx.fillText('Prayer', 850, 220);
+            ctx.fillText('Journal', 850, 250);
+
+            // Download
+            const link = document.createElement('a');
+            link.download = 'prayerfuljournal-feature-graphic-1024x500.png';
+            link.href = canvas.toDataURL();
+            link.click();
+        }
+    </script>
+</body>
+</html>
